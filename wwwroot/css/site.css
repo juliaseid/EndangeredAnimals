@@ -176,3 +176,17 @@ body {
 #us:hover {
   fill: #0d3017;
 }
+
+.splash {
+  height: 90vh;
+  width: 100vw;
+  background-image: url('https://wallpaperaccess.com/full/335506.jpg');
+  background-size: 100% 100%;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem;
+  color: #e9ebf8;
+}
