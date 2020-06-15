@@ -187,7 +187,7 @@
   <g
      style="fill:#2F004F;fill-opacity:1;stroke:#EABFCB;stroke-width:0.99986993999999996;stroke-miterlimit:3.97446822999999980;stroke-dasharray:none;stroke-opacity:1"
      id="mx"
-     class="land mx"
+     class="land cc"
      transform="matrix(2.224804,0,0,2.7339562,67.40394,-301.02597)">
     <path
        id="path2614"
@@ -254,7 +254,7 @@
   <g
      style="fill:#008000;fill-opacity:1;stroke:#ffffff;stroke-width:0.99986993999999996;stroke-miterlimit:3.97446822999999980;stroke-dasharray:none;stroke-opacity:1"
      id="ca"
-     class="land ca"
+     class="land cc"
      transform="matrix(2.224804,0,0,2.7339562,67.40394,-301.02597)">
     <path
        id="path3776"
@@ -1401,7 +1401,7 @@
   <g
      style="fill:#008000;fill-opacity:1;stroke:#ffffff;stroke-width:0.99986993999999996;stroke-miterlimit:3.97446822999999980;stroke-dasharray:none;stroke-opacity:1"
      id="us"
-     class="land us"
+     class="land cc"
      transform="matrix(2.224804,0,0,2.7339562,67.40394,-301.02597)">
     <path
        id="path3780"

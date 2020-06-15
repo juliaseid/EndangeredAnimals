@@ -4,7 +4,7 @@ using EndangeredAnimals.Models;
 using System;
 
 namespace EndangeredAnimals.Controllers
-{              
+{                  
   public class USAController : Controller
   {
     public IActionResult Index()
