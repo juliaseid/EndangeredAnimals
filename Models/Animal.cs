@@ -25,6 +25,7 @@ namespace EndangeredAnimals.Models
     public List<string> Countries;
     //This param comes from Threats query
     public IDictionary<string, string> ThreatRatings;
+    public string ImageURL;
 
   }
 
