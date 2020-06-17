@@ -4,10 +4,9 @@
 @foreach (Animal animal in Model)
 {
     <ul>
-      <li>ID: @animal.country</li>
-      <li>Name: @animal.taxonid</li>
+      <li>Name: @animal.taxonname</li>
       <li>Species: @animal.scientific_name</li>
-      <li>Age: @animal.country</li>
+      <li>URL: @animal.imgURL</li>
       
     </ul>
     @* <a href="/Animals/Details/@(animal.AnimalId)"><p>View Details</p></a> *@
