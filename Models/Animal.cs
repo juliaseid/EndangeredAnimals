@@ -39,13 +39,8 @@ namespace EndangeredAnimals.Models
         {"Mustela nigripes", "Black-Footed Ferret"},
         {"Eubalaena glacialis", "North Atlantic Right Whale"},
         {"Amazona viridigenalis", "Red-crowned Amazo"},
-        {"game", "games"},
-        {"megabyte", "megabytes"},
-        {"game", "games"},
-        {"megabyte", "megabytes"},
-        {"game", "games"},
-        {"megabyte", "megabytes"},
-        {"game", "games"}
+        {"Ateles geoffroyi", "Geoffroy's spider monkey"}
+
     };
 
     public static List<Animal> GetAnimalsByCountry(String country)
