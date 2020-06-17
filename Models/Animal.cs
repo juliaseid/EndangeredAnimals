@@ -51,6 +51,19 @@ namespace EndangeredAnimals.Models
 
       return animalList?[0]; //safe nevigator
     }
+
+    public static Animal GetDetails(string scientific_name)
+    {
+      var apiCallTask = ApiHelper.GetDetails(scientific_name);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      List<Animal> animals = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse["result"].ToString());
+
+      return animals?[0];
+
+    }
+
   }
 
 }

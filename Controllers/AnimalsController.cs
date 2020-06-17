@@ -23,11 +23,19 @@ namespace EndangeredAnimals.Controllers
           animalList.Add(animal);
         }
 
-        //animalDetail.category = animals[i].category;
-        //animalList.Add(animalDetail);
-        //animalList.Add(animal);
       }
       return View(animalList);
     }
+
+    public IActionResult Detail(string name)
+    {
+      Console.WriteLine("Name %%  " + name);
+      Animal thisAnimal = Animal.GetDetails(name);
+      return View(thisAnimal);
+    }
+
   }
+
+
+
 }

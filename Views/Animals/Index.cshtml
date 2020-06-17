@@ -6,12 +6,14 @@
 @foreach (Animal animal in Model)
 {
     <ul>
-      <li>Name: @animal.taxonname</li>
+      <li>Name: @animal.taxonname </li>
       <li>Species: @animal.scientific_name</li>
       <li><img src="@animal.imgURL" alt="Sample Image" width="300px" /></li>
       
     </ul>
-    @* <a href="/Animals/Details/@(animal.AnimalId)"><p>View Details</p></a> *@
+    @* <a href="/Animals/Index?country=MX"><p>View Animals</p></a> *@
+    <a href="/Animals/Detail?name=@animal.scientific_name"><p>View Details</p></a>
+    @* <p>@Html.ActionLink("View Details", "Detail", new {name = @animal.scientific_name}) </p> *@
     <br>
 }
 </ol>
