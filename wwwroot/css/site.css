@@ -44,9 +44,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-color: #dab993;
-  background-image: url('https://besthqwallpapers.com/Uploads/29-2-2020/123072/sea-evening-water-texture-waves-water-texture-water-background.jpg');
-  background-size: 100% 100%;
+  background-color: #2e422d;
 }
 /* #ebf5ee */
 /* #dab993 */
@@ -179,18 +177,35 @@ body {
 
 .splash {
   height: 90vh;
-  width: 100vw;
+  width: 99vw;
   background-image: url('https://wallpaperaccess.com/full/335506.jpg');
   background-size: 100% 100%;
-  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 5rem;
   color: #e9ebf8;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.489);
+  box-shadow: 0 4px 2px -5px rgba(0, 0, 0, 0.489);
   text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.836);
+}
+.USA {
+  background-image: url('https://www.visitcalifornia.com/sites/default/files/styles/welcome_image/public/vc_insidersguidetocaliforniasredwoodcoast_st_rm_ea6f8r_1280x640.jpg');
+  height: 90vh;
+  width: 99vw;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  color: #e9ebf8;
+  box-shadow: 0 4px 2px -5px rgba(0, 0, 0, 0.489);
+  text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.836);
+}
+.USA h5 {
+  width: 45vw;
+  text-align: justify;
 }
 
 .splash h4 {
@@ -209,6 +224,9 @@ body {
   align-items: center;
   box-shadow: inset 0 -10px 4px -10px #000000;
   color: white;
+  padding-top: 10vh;
+  background-image: url('https://besthqwallpapers.com/Uploads/29-2-2020/123072/sea-evening-water-texture-waves-water-texture-water-background.jpg');
+  background-size: 100% 100%;
 }
 
 .map-container div {
@@ -220,12 +238,16 @@ h2,
   color: #026691;
   text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.692);
 }
+.map-container h4 {
+  -webkit-text-stroke: 0.2px white;
+  font-size: 32px;
+  font-weight: 750;
+}
 
 .ex-container {
   width: 99vw;
   padding: 1rem;
   background-color: #2e422d;
-  box-shadow: 0 4px 2px -2px gray;
 }
 
 .ex-container h2 {
@@ -267,8 +289,18 @@ h2,
   padding: 1rem;
 }
 
+.monkey h4 {
+  text-align: right;
+}
+
 .wolf img,
 .monkey img {
   width: 35vw;
   box-shadow: 5px 5px 8px 5px rgba(0, 0, 0, 0.449);
+}
+
+.wolf div,
+.monkey div {
+  width: 35vw;
+  text-align: justify;
 }
