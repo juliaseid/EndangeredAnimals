@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EndangeredAnimals.Models;
-using System;
 namespace EndangeredAnimals.Controllers
 {
   public class AnimalsController : Controller
@@ -14,21 +13,20 @@ namespace EndangeredAnimals.Controllers
     {
       List<Animal> animalList = new List<Animal>();
       List<Animal> animals = Animal.GetAnimalsByCountry(country);
-      for (int i = 0; i < 25; i++)
+      foreach (Animal animal in animals)
       {
+        if (EnvironmentVariables.OurAnimals.ContainsKey(animal.scientific_name))
+        {
+          var animalCommonName = Animal.GetAnimalsBySciName(animal.scientific_name);
+          animal.taxonname = animalCommonName.taxonname;
+          animal.imgURL = EnvironmentVariables.OurAnimals[animal.scientific_name];
+          animalList.Add(animal);
+        }
 
-        //var animalDetail = Animal.GetAnimalsBySciName(animals[i].scientific_name);
         //animalDetail.category = animals[i].category;
         //animalList.Add(animalDetail);
-        animalList.Add(animals[i]);
-
+        //animalList.Add(animal);
       }
-      //for each animal in API response 
-      //{
-      //if (EnvironmentVariables CAAnimals.Contains(animal.scientific_name))
-      //{
-      //          animalList.Add(animalDetail)
-      //      }
       return View(animalList);
     }
   }

@@ -15,13 +15,15 @@ namespace EndangeredAnimals.Models
       Console.WriteLine("URL:" + response.ResponseUri);
       return response.Content;
     }
-    public static async Task<string> GetDetails(string sciName)
+    public static async Task<string> GetCommonName(string sciName)
     {
-      RestClient client = new RestClient("http://apiv3.iucnredlist.org/api/v3/country/getspecies");
-      RestRequest request = new RestRequest($"{sciName}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee", Method.GET);
+      // string sciNameEncoded = HttpUtility.UrlEncode(sciName.ToLower());
+      //http://apiv3.iucnredlist.org/api/v3/species/common_names/loxodonta%20africana?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee
+      RestClient client = new RestClient("http://apiv3.iucnredlist.org/api/v3/species/common_names");
+      RestRequest request = new RestRequest($"{sciName.ToLower()}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee", Method.GET);
 
       var response = await client.ExecuteTaskAsync(request);
-      Console.WriteLine("URL:" + response.ResponseUri);
+      Console.WriteLine("Name URL: " + response.ResponseUri);
       return response.Content;
     }
   }
