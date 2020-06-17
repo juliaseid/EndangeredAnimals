@@ -189,6 +189,24 @@ body {
   box-shadow: 0 4px 2px -5px rgba(0, 0, 0, 0.489);
   text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.836);
 }
+.USA {
+  background-image: url('https://www.visitcalifornia.com/sites/default/files/styles/welcome_image/public/vc_insidersguidetocaliforniasredwoodcoast_st_rm_ea6f8r_1280x640.jpg');
+  height: 90vh;
+  width: 99vw;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  color: #e9ebf8;
+  box-shadow: 0 4px 2px -5px rgba(0, 0, 0, 0.489);
+  text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.836);
+}
+.USA h5 {
+  width: 45vw;
+  text-align: justify;
+}
 
 .splash h4 {
   width: 30vw;
