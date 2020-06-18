@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EndangeredAnimals.Models;
 namespace EndangeredAnimals.Controllers
-{
+{  
   public class AnimalsController : Controller
   {
     public IActionResult Index(string country)
@@ -23,6 +23,13 @@ namespace EndangeredAnimals.Controllers
           animalList.Add(animal);
         }
 
+<<<<<<< HEAD
+=======
+        //animalDetail.category = animals[i].category;
+        //animalList.Add(animalDetail);
+        //animalList.Add(animal);
+        ViewBag.Country = country;
+>>>>>>> 2b9175f88709dec4967663181680032c90e11cc0
       }
       return View(animalList);
     }
