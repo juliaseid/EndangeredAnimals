@@ -30,15 +30,34 @@ namespace EndangeredAnimals.Models
     public string country;
     public string imgURL;
 
+    public static Dictionary<string, RedApiRespons> apiResponseCache = new Dictionary<string, RedApiRespons>{};
 
+    private static int expireMinitues = 10;
 
     public static List<Animal> GetAnimalsByCountry(String country)
     {
-      var apiCallTask = ApiHelper.GetAll(country);
-      var result = apiCallTask.Result;
+      // api cacheing
+      var key = "GetAnimalsByCountry-" + country;
+      var result = "";
+      if (apiResponseCache.ContainsKey(key) == false || apiResponseCache[key].ExpirationTime.Subtract(DateTime.Now).TotalSeconds < 0)
+      {
+        
+        var apiCallTask = ApiHelper.GetAll(country);
+        result = apiCallTask.Result;
+        if (apiResponseCache.ContainsKey(key))
+        {
+          apiResponseCache.Remove(key);
+        }
+        apiResponseCache.Add(key, new RedApiRespons() { ApiRespons = result, ExpirationTime = DateTime.Now.AddMinutes(expireMinitues) });
 
+      }
+      else
+      {
+                result = apiResponseCache[key].ApiRespons;
+      }
+
+      //end api cacheing
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      //JObject  jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Animal> animalList = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse["result"].ToString());
 
       return animalList;
@@ -46,8 +65,26 @@ namespace EndangeredAnimals.Models
 
     public static Animal GetAnimalsBySciName(String sciName)
     {
-      var apiCallTask = ApiHelper.GetCommonName(sciName);
-      var result = apiCallTask.Result;
+      //api cache
+      var key = "GetAnimalsBySciName-" + sciName;
+      var result = "";
+      if (apiResponseCache.ContainsKey(key) == false || apiResponseCache[key].ExpirationTime.Subtract(DateTime.Now).TotalSeconds < 0)
+      {
+        
+        var apiCallTask = ApiHelper.GetCommonName(sciName);
+        result = apiCallTask.Result;
+        if (apiResponseCache.ContainsKey(key))
+        {
+          apiResponseCache.Remove(key);
+        }
+        apiResponseCache.Add(key, new RedApiRespons() { ApiRespons = result, ExpirationTime = DateTime.Now.AddMinutes(expireMinitues) });
+      }
+      else
+      {
+        
+        result = apiResponseCache[key].ApiRespons;
+      }
+
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
       List<Animal> animalList = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse["result"].ToString());
@@ -57,8 +94,26 @@ namespace EndangeredAnimals.Models
 
     public static Animal GetOverview(string scientific_name)
     {
-      var apiCallTask = ApiHelper.GetOverview(scientific_name);
-      var result = apiCallTask.Result;
+      //api cache
+      var key = "GetOverview-" + scientific_name;
+      var result = "";
+      if (apiResponseCache.ContainsKey(key) == false || apiResponseCache[key].ExpirationTime.Subtract(DateTime.Now).TotalSeconds < 0)
+      {
+      
+        var apiCallTask = ApiHelper.GetOverview(scientific_name);
+        result = apiCallTask.Result;
+        if (apiResponseCache.ContainsKey(key))
+        {
+          apiResponseCache.Remove(key);
+        }
+        apiResponseCache.Add(key, new RedApiRespons() { ApiRespons = result, ExpirationTime = DateTime.Now.AddMinutes(expireMinitues) });
+      }
+      else
+      {
+        
+        result = apiResponseCache[key].ApiRespons;
+      }
+
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
       List<Animal> animals = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse["result"].ToString());
@@ -68,8 +123,26 @@ namespace EndangeredAnimals.Models
 
     public static Animal GetDetails(string scientific_name)
     {
-      var apiCallTask = ApiHelper.GetDetails(scientific_name);
-      var result = apiCallTask.Result;
+      //api cache
+      var key = "GetDetails-" + scientific_name;
+      var result = "";
+      if (apiResponseCache.ContainsKey(key) == false || apiResponseCache[key].ExpirationTime.Subtract(DateTime.Now).TotalSeconds < 0)
+      {
+       
+        var apiCallTask = ApiHelper.GetDetails(scientific_name);
+        result = apiCallTask.Result;
+        if (apiResponseCache.ContainsKey(key))
+        {
+          apiResponseCache.Remove(key);
+        }
+        apiResponseCache.Add(key, new RedApiRespons() { ApiRespons = result, ExpirationTime = DateTime.Now.AddMinutes(expireMinitues) });
+      }
+      else
+      {
+
+        result = apiResponseCache[key].ApiRespons;
+      }
+
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
       List<Animal> animals = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse["result"].ToString());
@@ -77,7 +150,6 @@ namespace EndangeredAnimals.Models
       return animals?[0];
 
     }
-
   }
 
 }
