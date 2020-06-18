@@ -23,13 +23,8 @@ namespace EndangeredAnimals.Controllers
           animalList.Add(animal);
         }
 
-<<<<<<< HEAD
-=======
-        //animalDetail.category = animals[i].category;
-        //animalList.Add(animalDetail);
-        //animalList.Add(animal);
+    
         ViewBag.Country = country;
->>>>>>> 2b9175f88709dec4967663181680032c90e11cc0
       }
       return View(animalList);
     }
