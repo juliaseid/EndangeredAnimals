@@ -3,9 +3,13 @@
 }
 
 @model EndangeredAnimals.Models.Animal;
-
+<br>
+<br>
+@* Why is taxonname/common name not showing up? *@
 <h4>@Html.DisplayFor(model => model.taxonname)</h4>
+<h5>Family: @Html.DisplayFor(model => model.family)</h5>
 <h5><em>@Html.DisplayFor(model => model.scientific_name)</em></h5>
+@* Need conditional here to interpret EN/CR *@
 <h5>Status: @Html.DisplayFor(model => model.category)</h5>
 <h5>Population Trend: @Html.DisplayFor(model => model.populationtrend)</h5>
 <h5>Summary:</h5>
@@ -14,17 +18,17 @@
 <div class="row">
   <div class = "col-md-6">
     <h5>Population</h5>
-    <p>@Html.DisplayFor(model => model.population)</p>
+    @Html.DisplayFor(model => model.population)
     <h5>Geographic Range</h5>
-    <p>@Html.DisplayFor(model => model.geographicrange)</p>
+    @Html.DisplayFor(model => model.geographicrange)
     <h5>Habitat</h5>
-    <p>@Html.DisplayFor(model => model.habitat)</p>
+    @Html.DisplayFor(model => model.habitat)
   </div>
   <div class = "col-md-6">
     <h5>Threats</h5>
-    <p>@Html.DisplayFor(model => model.threats)</p>
+    @Html.DisplayFor(model => model.threats)
     <h5>Conservation Efforts</h5>
-    <p>@Html.DisplayFor(model => model.conservationmeasures)</p>
+    @Html.DisplayFor(model => model.conservationmeasures)
     
   </div>
 </div>

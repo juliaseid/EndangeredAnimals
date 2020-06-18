@@ -31,6 +31,9 @@ namespace EndangeredAnimals.Controllers
     {
       Console.WriteLine("Name %%  " + name);
       Animal thisAnimal = Animal.GetDetails(name);
+      var animalOverview = Animal.GetOverview(name);
+      thisAnimal.category = animalOverview.category;
+      thisAnimal.family = animalOverview.family;
       return View(thisAnimal);
     }
 

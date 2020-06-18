@@ -13,7 +13,8 @@ namespace EndangeredAnimals.Models
     public string scientific_name;
     //taxonname is Common Name from API
     public string taxonname { get; set; }
-    public string category;
+    public string family { get; set; }
+    public string category { get; set; }
     public string rationale;
     public string populationtrend;
 
@@ -27,6 +28,7 @@ namespace EndangeredAnimals.Models
     //This param comes from Countries by Species query
     public string country;
     public string imgURL;
+
 
 
     public static List<Animal> GetAnimalsByCountry(String country)
@@ -50,6 +52,17 @@ namespace EndangeredAnimals.Models
       List<Animal> animalList = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse["result"].ToString());
 
       return animalList?[0]; //safe nevigator
+    }
+
+    public static Animal GetOverview(string scientific_name)
+    {
+      var apiCallTask = ApiHelper.GetOverview(scientific_name);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      List<Animal> animals = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse["result"].ToString());
+
+      return animals?[0];
     }
 
     public static Animal GetDetails(string scientific_name)
