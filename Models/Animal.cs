@@ -17,6 +17,7 @@ namespace EndangeredAnimals.Models
     public string category { get; set; }
     public string rationale;
     public string populationtrend;
+    public string main_common_name;
 
     //The following params come from Narrative query
     public string population;

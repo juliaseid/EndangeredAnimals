@@ -1,34 +1,46 @@
 @{
   Layout = "_Layout";
 }
-
+@using System.Web;
 @model EndangeredAnimals.Models.Animal;
-<br>
-<br>
-@* Why is taxonname/common name not showing up? b/c it's from a diff api call?*@
-<h4>@Html.DisplayFor(model => model.taxonname)</h4>
-<h5>Family: @Html.DisplayFor(model => model.family)</h5>
-<h5><em>@Html.DisplayFor(model => model.scientific_name)</em></h5>
-@* Need conditional here to interpret EN/CR *@
-<h5>Status: @Html.DisplayFor(model => model.category)</h5>
-<h5>Population Trend: @Html.DisplayFor(model => model.populationtrend)</h5>
-<h5>Summary:</h5>
-<p>@Html.DisplayFor(model => model.rationale)</p>
+<div class="animal-card" style="width: 95vw; margin-left: 2.5vw; padding: 5rem; font-weight: normal;" >
+  <h4>@Html.Raw(Model.taxonname)</h4>
+  <h5>Family: @Html.Raw(Model.family)</h5>
 
-<div class="row">
-  <div class = "col-md-6">
-    <h5>Population</h5>
-    @Html.DisplayFor(model => model.population)
-    <h5>Geographic Range</h5>
-    @Html.DisplayFor(model => model.geographicrange)
-    <h5>Habitat</h5>
-    @Html.DisplayFor(model => model.habitat)
-  </div>
-  <div class = "col-md-6">
-    <h5>Threats</h5>
-    @Html.DisplayFor(model => model.threats)
-    <h5>Conservation Efforts</h5>
-    @Html.DisplayFor(model => model.conservationmeasures)
-    
+    <h5><em>@Html.Raw(Model.scientific_name)</em></h5>
+   
+      <span> <strong>Status: </strong> @if(Model.category == "EN"){
+        <span>Endangered</span>
+      } @if(Model.category == "CR"){
+        <span>Critically Endangered</span>
+      } @if(Model.category == "VU"){
+        <span>Vulnerable</span>
+      } @if(Model.category == "LC"){
+        <span>Least Concern</span>
+      } @if(Model.category == "NT"){
+        <span>Near Threatened</span>
+      }
+      </span>
+  
+    <span> <strong>Population Trend:</strong> @Html.Raw(Model.populationtrend)</span>
+
+  <h5 style="margin: 2rem 0">Summary:</h5>
+  <p>@Html.Raw(Model.rationale)</p>
+
+  <div class="row" >
+    <div class = "col-md-6" style="padding: 1rem; font-weight: normal;" >
+      <h5 style="margin: 2rem 0">Population</h5>
+      @Html.Raw(Model.population)
+      <h5 style="margin: 2rem 0">Geographic Range</h5>
+      @Html.Raw(Model.geographicrange)
+      <h5 style="margin: 2rem 0">Habitat</h5>
+      @Html.Raw(Model.habitat)
+    </div>
+    <div class = "col-md-6" style="padding: 1rem; font-weight: normal;">
+      <h5 style="margin: 2rem 0">Threats</h5>
+      @Html.Raw(Model.threats)
+      <h5 style="margin: 2rem 0">Conservation Efforts</h5>
+      @Html.Raw(Model.conservationmeasures)
+    </div>
   </div>
 </div>

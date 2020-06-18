@@ -7,7 +7,7 @@ namespace EndangeredAnimals.Models
     public static Dictionary<string, string> OurAnimals = new Dictionary<string, string>
     {
       {"Alopias pelagicus", "https://www.edgeofexistence.org/wp-content/uploads/2018/11/Alopias-pelagicus_shutterstock_240702010-1000x667.jpg"},
-      {"Amazona viridigenalis","https://lh3.googleusercontent.com/proxy/XbqjsnvL6QPUSQv2rNNa1TRaig0QJ20ExXls4-eMxDLMS4XbChWoUhs4I78V3IcDTP8dXpWxWK_onpneGFa3EGtEGLLjVgVT1zN0IfHyZ4zNo9_ywP3GqrXIQt4pARMoPfLZvriEpvD8yaVGZsaZTaj3gne0r8PPnrxDMeBpzw1rPq2KcWx4z4CTatnJJPSEYVoY8loAl1QW-x32UxmspShW4A"},
+      {"Amazona viridigenalis","https://test.cdn.download.ams.birds.cornell.edu/api/v1/asset/40257001/1800"},
       {"Ambystoma mexicanum", "https://i5.walmartimages.com/asr/f019f97a-1a03-4c94-af8d-b51515669e96_1.0461a05e398cea3818d7a2b4bf701724.jpeg"},
       {"anaxyrus californicus", "https://lh3.googleusercontent.com/proxy/SNtkK_SAD-W4wOTnMzDaTsi9z4-UMsPjCkuyNa84rL3bjtQSmdCSsDRcN7CDcmXNWk0Cb6bpJjao8atRnvMSt6EzFmrCloWerUQ7SkGqRSthy_MorSWVz0OO"},
       {"Ara macao", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Scarlet-Macaw-cr.jpg/1200px-Scarlet-Macaw-cr.jpg"},
@@ -34,7 +34,7 @@ namespace EndangeredAnimals.Models
       {"marmota vancouverensis", "https://usercontent2.hubstatic.com/8728639_f1024.jpg"},
       {"Mustela nigripes", "https://blog.nature.org/science/files/2016/01/ferrets2.jpg"},
       {"Nicrophorus americanus", "https://bloximages.chicago2.vip.townnews.com/dailyjournalonline.com/content/tncms/assets/v3/editorial/5/c3/5c342169-e67e-50a1-95f0-dc819b9bde29/598e1d6c45764.image.jpg?resize=1200%2C799"},
-      {"Pristis pectinata", "https://lh3.googleusercontent.com/proxy/TvESyY6WKsLHYKuZa0GHQnKiah043kdDrNqtF35iqqlqso9RVas_1qDJx4gooU_NWOwqLGoeUUJE_vCftxTJ7xikltlQzKQbblE16XRCsK2yxfk7iTo"},
+      {"Pristis pectinata", "https://www.floridamuseum.ufl.edu/wp-content/uploads/sites/66/2018/08/Pristis_pristis_townsville-By-Simon-Fraser-University-Wikicommons-500x333.jpg"},
       {"Procyon pygmaeus", "https://content.eol.org/data/media/4c/9e/a9/18.https___www_inaturalist_org_photos_908082.jpg"},
       {"Rangifer tarandus caribou", "https://www.sciencesource.com/Doc/TR1_WATERMARKED/4/a/a/d/SS2221509.jpg?d63641658978"},
       {"Scaphirhynchus albus", "https://outdoornebraska.gov/wp-content/uploads/2018/12/Pallid-Sturgeon-NEBRASKAland-2.jpg"},
@@ -42,6 +42,6 @@ namespace EndangeredAnimals.Models
       {"Somatochlora hineana", "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555434115/shape/mentalfloss/somatochlora_hineana_small.jpg?itok=AkCXe-h4"},
       {"Strix occidentalis caurina", "https://cdn9.dissolve.com/p/D1294_11_703/D1294_11_703_1200.jpg"},
       {"Trichechus manatus", "https://www.scubadiverdestinations.com/wp-content/uploads/sites/3/2020/02/Manatee_01.jpg"}
-  };
+    };
   }
 }

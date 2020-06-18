@@ -13,7 +13,7 @@ namespace EndangeredAnimals.Controllers
     {
       List<Animal> animalList = new List<Animal>();
       List<Animal> animals = Animal.GetAnimalsByCountry(country);
-      foreach (Animal animal in animals)
+      Parallel.ForEach (animals, animal => 
       {
         if (EnvironmentVariables.OurAnimals.ContainsKey(animal.scientific_name))
         {
@@ -22,25 +22,21 @@ namespace EndangeredAnimals.Controllers
           animal.imgURL = EnvironmentVariables.OurAnimals[animal.scientific_name];
           animalList.Add(animal);
         }
-
-    
+       
         ViewBag.Country = country;
-      }
+      });
       return View(animalList);
     }
 
     public IActionResult Detail(string name)
     {
-      Console.WriteLine("Name %%  " + name);
       Animal thisAnimal = Animal.GetDetails(name);
       var animalOverview = Animal.GetOverview(name);
+      thisAnimal.scientific_name = animalOverview.scientific_name;
       thisAnimal.category = animalOverview.category;
       thisAnimal.family = animalOverview.family;
+      thisAnimal.taxonname = animalOverview.main_common_name;
       return View(thisAnimal);
     }
-
   }
-
-
-
 }
